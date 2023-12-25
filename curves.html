@@ -4,7 +4,7 @@
         <title>HTML5 Canvas 2D Graphic Curves Examples</title>
     </head>
     <body>
-        <canvas id="canvas" width="650" height="500">
+        <canvas id="canvas" width="1000" height="500">
             <h3>Your browser does not support canvas</h3>
         </canvas>
         <script>
@@ -31,6 +31,14 @@
 
                 ctx.lineWidth = 2;
                 ctx.strokeStyle = "black";
+                ctx.stroke();
+
+                // Drawing a quadratic curve
+                ctx.beginPath();
+                ctx.moveTo(450, 200);
+                ctx.quadraticCurveTo(825, 25, 850, 200);
+                ctx.fillStyle = "rgba(150, 50, 100, 0.5)";
+                ctx.fill();
                 ctx.stroke();
         </script>
     </body>
