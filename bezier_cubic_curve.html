@@ -18,6 +18,17 @@
                 ctx.fillStyle = "rgba(150, 50, 100, 0.5)";
                 ctx.fill();
                 ctx.stroke();
+
+                // draw control point for cubic Bezier curve
+                ctx.strokeStyle = ctx.fillStyle = "rgba(0, 0, 0, 0.5)";
+                ctx.beginPath();
+                ctx.moveTo(50, 200);
+                ctx.lineTo(150, 25);
+                ctx.lineTo(350, 350);
+                ctx.lineTo(400, 200);
+                ctx.stroke();
+                ctx.fillRect(150-2, 25-2, 4.4);
+                ctx.fillRect(350-2, 350-2, 4.4);
         </script>
     </body>
 </html>
