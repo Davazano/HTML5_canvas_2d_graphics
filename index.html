@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HTML5 Canvas 2D Graphic Examples</title>
+    </head>
+    <body>
+        <canvas id="canvas" width="250" height="250">
+            <h3>Your browser does not support canvas</h3>
+        </canvas>
+        <script>
+            var canvas = document.getElementById("canvas"),
+                ctx = canvas.getContext("2d");
+            
+                ctx.beginPath();
+                ctx.moveTo(125, 50);
+                ctx.lineTo(200, 200);
+                ctx.lineTo(50, 125);
+                ctx.closePath();
+
+                ctx.strokeStyle = "red";
+                ctx.lineWidth = 2.0;
+                ctx.stroke();
+        </script>
+    </body>
+</html>
