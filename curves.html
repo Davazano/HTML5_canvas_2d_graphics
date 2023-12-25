@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HTML5 Canvas 2D Graphic Curves Examples</title>
+    </head>
+    <body>
+        <canvas id="canvas" width="650" height="500">
+            <h3>Your browser does not support canvas</h3>
+        </canvas>
+        <script>
+            var canvas = document.getElementById("canvas"),
+                ctx = canvas.getContext("2d");
+            
+                // Drawing arcs
+                ctx.fillStyle = "rgba(100, 150, 200, 0.5)";
+                ctx.beginPath();
+                ctx.arc(180, 240, 80, 0.25 * Math.PI, 1.25 * Math.PI, false);
+
+                ctx.closePath();
+                ctx.fill();
+
+                ctx.lineWidth = 32;
+                ctx.strokeStyle = "#664422";
+                ctx.stroke();
+        </script>
+    </body>
+</html>
