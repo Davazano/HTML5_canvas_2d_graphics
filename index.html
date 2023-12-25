@@ -11,6 +11,7 @@
             var canvas = document.getElementById("canvas"),
                 ctx = canvas.getContext("2d");
             
+                // Drawing a simple triangle
                 ctx.beginPath();
                 ctx.moveTo(125, 50);
                 ctx.lineTo(200, 200);
@@ -23,6 +24,12 @@
                 ctx.strokeStyle = "red";
                 ctx.lineWidth = 2.0;
                 ctx.stroke();
+
+                // Drawing a simple rectangle
+                ctx.beginPath();
+                ctx.rect(150, 210, 100, 30);
+                ctx.fillStyle = "rgba(255, 150, 50, 0.5)";
+                ctx.fill();
         </script>
     </body>
 </html>
