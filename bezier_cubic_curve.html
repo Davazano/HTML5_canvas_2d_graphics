@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HTML5 Canvas 2D Graphic Curves Examples</title>
+    </head>
+    <body>
+        <canvas id="canvas" width="1000" height="500">
+            <h3>Your browser does not support canvas</h3>
+        </canvas>
+        <script>
+            var canvas = document.getElementById("canvas"),
+                ctx = canvas.getContext("2d");
+
+                // draw cubic Bezier curve
+                ctx.beginPath();
+                ctx.moveTo(50, 200);
+                ctx.bezierCurveTo(150, 25, 350, 350, 400, 200);
+                ctx.fillStyle = "rgba(150, 50, 100, 0.5)";
+                ctx.fill();
+                ctx.stroke();
+        </script>
+    </body>
+</html>
