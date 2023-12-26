@@ -12,6 +12,13 @@
 <body>
 	<canvas id="canvas" width=400 height=350></canvas>
 	<script>
+        function makePath(ctx, points) {
+			ctx.moveTo(points[0][0], points[0][1]);
+			for (var i=1,len=points.length;i<len;i++) {
+				ctx.lineTo(points[i][0], points[i][1]);
+			}
+		}
+        
 		function drawBackground(canvas) {
             var ctx = canvas.getContext("2d"),
                 grad,
