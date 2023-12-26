@@ -10,7 +10,7 @@
 	</style>
 </head>
 <body>
-	<canvas id="canvas" width=400 height=350></canvas>
+	<canvas id="canvas" width=400 height=400></canvas>
 	<script>
         function makePath(ctx, points) {
 			ctx.moveTo(points[0][0], points[0][1]);
@@ -114,7 +114,20 @@
 			// restore original state
 			ctx.restore();
         }
-	</script>
+	
+        var canvas = document.getElementById("canvas"),
+			ctx = canvas.getContext("2d");
+		
+		drawBackground(canvas);
+		
+		// draw a single logo in the center
+		ctx.translate(canvas.width/2, canvas.height/2)
+		ctx.scale(0.5,0.5);
+		drawLogo(ctx);
+
+        
+		
+    </script>
 	
 </body>
 </html>
