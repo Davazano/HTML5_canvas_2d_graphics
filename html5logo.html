@@ -18,7 +18,7 @@
 				ctx.lineTo(points[i][0], points[i][1]);
 			}
 		}
-        
+
 		function drawBackground(canvas) {
             var ctx = canvas.getContext("2d"),
                 grad,
@@ -69,6 +69,50 @@
 					[225,355], [162,338], [158,293], [128,293], 
 					[102,293], [109,382], [225,414]
 				];
+            
+            // save original state
+			ctx.save();
+            // translate the coordinate space to center of logo
+			ctx.translate(-225,-256);
+			// fill background of logo
+			ctx.beginPath();
+			makePath(ctx, logo);
+			ctx.fillStyle = "#e34c26";
+			ctx.fill()
+
+			
+			// add down-scaling at the center of the logo
+			ctx.save();
+			ctx.translate(225,256);
+			ctx.scale(0.8, 0.8);
+			ctx.translate(-225,-256);
+			// clip the right half of the logo
+			ctx.beginPath();
+			ctx.rect(225,0,225,512);
+			ctx.clip();
+			// paint a lighter, down-scaled logo on the right half
+			ctx.beginPath();
+			makePath(ctx, logo);
+			ctx.fillStyle = "#f06529";
+			ctx.fill();
+			// restore scaling and clipping region
+			ctx.restore();
+
+			// fill white part of "5"
+			ctx.beginPath();
+			makePath(ctx, five0);
+			makePath(ctx, five1);
+			ctx.fillStyle = "#ffffff";
+			ctx.fill();
+			// fill light grey part of "5"
+			ctx.beginPath();
+			makePath(ctx, five2);
+			makePath(ctx, five3);
+			ctx.fillStyle = "#ebebeb"
+			ctx.fill();
+			
+			// restore original state
+			ctx.restore();
         }
 	</script>
 	
