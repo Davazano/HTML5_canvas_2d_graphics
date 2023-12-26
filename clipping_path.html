@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HTML5 Canvas 2D Graphic Clipping Path Examples</title>
+    </head>
+    <body>
+        <canvas id="canvas" width="1000" height="500">
+            <h3>Your browser does not support canvas</h3>
+        </canvas>
+        <script>
+            var canvas = document.getElementById("canvas"),
+                ctx = canvas.getContext("2d");
+
+            function makeClippingPath() {
+                // make a star-shaped clipping path
+                ctx.beginPath();
+                ctx.moveTo(270, 200);
+                for (var i=0; i<=20; i++) {
+                    ctx.lineTo(
+                        200 + Math.cos(i/10 * Math.PI) * 70 * (i%2 + 1),
+                        200 + Math.sin(i/10 * Math.PI) * 70 * (i%2 + 1)
+                    );
+                }
+                ctx.clip();
+            }
+
+            // fill the entire canvas
+            ctx.fillStyle = "sienna";
+            ctx.fillRect(0, 0, 400, 400);
+
+            makeClippingPath();
+
+            // try to fill the canvas again
+            ctx.fillStyle = "lightsalmon";
+            ctx.fillRect(0, 0, 400, 400);
+        </script>
+    </body>
+</html>
